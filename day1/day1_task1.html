@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <h1>Click the button</h1>
+    <h3>And enter a number for summation</h3>
+    <h3>You have to enter 5 numbers</h3>
+    <button id="btn">Next</button><br><br>
+    <div class="ans" id="output"></div>
+</body>
+<script>
+    
+    var click = document.getElementById('btn');
+
+    var op = document.getElementById('output');
+
+    function popUp(){
+        var number1 = prompt("Enter a number.");
+        var number = parseInt(number1);
+
+        return number;
+    }
+    
+    click.addEventListener('click',()=>{
+        var sum = 0;
+        for(var i=0;i<5;i++){
+            var num = popUp(); 
+            sum =sum + num;
+        }
+
+        op.innerHTML=`Your answer is : ${sum}`;
+        console.log(sum);
+    });
+
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            height: 20px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Reverse the string</h1>
+        <label for="string">Enter string Below</label>
+        <input type="text" id="string"><br>
+        <button id="btn">Button</button><br>
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+    var ip = document.getElementById('string');     //input
+
+    var click = document.getElementById('btn');    //button
+
+    var op = document.getElementById('output');    // output
+
+
+    function readData() {
+        var rd = ip.value;
+        return rd;
+    }
+
+    function reverseString(inputString){
+        var str=inputString.split("");
+        for(var i=0;i<50;i=i+3){
+            if(str[i]==undefined){
+                break;
+            }
+            if(str[i+1]==undefined){
+                break;
+            }
+            if(str[i+2]==undefined){
+                break;
+            }
+            var temp;
+            temp=str[i];
+            str[i]=str[i+2];
+            str[i+2]=temp;
+        }
+        return str.join("");
+    }
+
+click.addEventListener('click',()=>{
+
+        var inputString = readData();
+
+        var reverse = reverseString(inputString);
+
+        console.log(reverse);
+        op.innerHTML = `${reverse}`;
+    });
+
+
+    
+</script>
+</html>
